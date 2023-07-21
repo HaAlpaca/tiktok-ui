@@ -22,11 +22,14 @@
 // .logo {
     
 // }
+.search, .search-result {
+    width: 361px;
+
+}
 .search {
     display: flex;
     position: relative ;
     // justify-content: space-between;
-    width: 361px;
     height: var(--search-height);
     padding-left: 16px;
     background-color: rgba(22,24,35,0.06);
@@ -62,6 +65,13 @@
     }
 }
 
+.search-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    color: rgba(22, 24, 35, 0.5);
+}
+
 
 .clear,
 .loading {
@@ -90,3 +100,7 @@
     }
 
 }
+
+// .custom-login {
+//     color: red;
+// }
