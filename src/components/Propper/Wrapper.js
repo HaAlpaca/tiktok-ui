@@ -3,11 +3,11 @@ import styles from "./Propper.module.scss"
 
 const cx = classNames.bind(styles)
 
-function Wrapper({children}) {
+function Wrapper({children,className}) {
     
     return ( 
         <div
-            className={cx('wrapper')}
+            className={cx('wrapper',className)}
         >
             {children}
         </div>
