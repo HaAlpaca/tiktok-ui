@@ -9,7 +9,6 @@ import {
   faEarthAsia,
   faCircleQuestion,
   faKeyboard,
-  faCloudUpload,
   faUser,
   faCoins,
   faGear,
@@ -25,6 +24,8 @@ import { Wrapper as PropperWrapper } from '~/components/Propper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Propper/Menu';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -146,7 +147,7 @@ function Header() {
             <>
               <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                 <button className={cx('action-btn')}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <UploadIcon />
                 </button>
               </Tippy>
             </>
@@ -159,7 +160,7 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 className={cx('user-avatar')}
                 alt="NG VAN AN"
                 src="https://yt3.ggpht.com/UsflU74uvka_3sejOu3LUGwzOhHJV0eIYoWcvOfkOre_c12uIN4ys-QqRlAkbusEmbZjTA-b=s68-c-k-c0x00ffffff-no-rj"
