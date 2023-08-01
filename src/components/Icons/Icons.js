@@ -3,7 +3,7 @@ export const UploadIcon = ({ width = '3.2rem', height = '3.2rem', className }) =
         className={className}
         width={width}
         height={height}
-        display="flex"
+        
         viewBox="0 0 32 32"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export const MessageIcon = ({ width = '2.6rem', height = '2.6rem', className }) 
         className={className}
         width={width}
         height={height}
-        display="flex"
+        
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ export const InboxIcon = ({ width = '3.2rem', height = '3.2rem', className }) =>
         className={className}
         width={width}
         height={height}
-        display="flex"
+        
         viewBox="0 0 32 32"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ export const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) =
         className={className}
         width={width}
         height={height}
-        display="flex"
+        
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,6 @@ export const HomeIcon = ({ width = '3.2rem', height = '3.2rem', className }) => 
         className={className}
         width={width}
         height={height}
-        display="flex"
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
