@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 
-import AccountItem from '~/components/AccountItem';
-import * as searchServices from '~/apiServices/searchServices';
+import AccountItem from '~/components/AccountItem/AccountItem';
+import * as searchServices from '~/services/searchService';
 import { Wrapper as PropperWrapper } from '~/components/Propper';
 import { SearchIcon } from '~/components/Icons';
 import styles from './Search.module.scss';
@@ -13,28 +13,29 @@ import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
+
 function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
+    const [showResult, setShowResult] = useState(false);
     const [loading, setLoading] = useState(false);
     const inputRef = useRef();
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
 
         const fetchAPI = async () => {
             setLoading(true);
-            const result = await searchServices.search(debounced);
+            const result = await searchServices.search(debouncedValue);
             setSearchResult(result);
             setLoading(false);
         };
 
         fetchAPI();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleClear = () => {
         setSearchValue('');
@@ -54,6 +55,8 @@ function Search() {
     };
 
     return (
+        // Using a wrapper <div> tag around the reference element solves
+        // this by creating a new parentNode context.
         <div>
             <HeadlessTippy
                 interactive={true}
